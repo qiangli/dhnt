@@ -1,0 +1,33 @@
+#
+version: '3.6'
+
+services:
+  m3os:
+      image: dhnt/m3:latest
+      restart: always
+      container_name: m3os
+      hostname: m3os
+      ports:
+        - "1080:1080"
+        - "18080:18080"
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - dhnt:/home/dhnt
+      entrypoint:
+        - '/dhnt/bin/m3'
+        - 'run'
+        - '--base'
+        - '/dhnt'
+      labels:
+        - traefik.enable=false
+      networks:
+        web:
+
+volumes:
+  dhnt:
+
+networks:
+  web:
+    external: false
+    name: web
+##
