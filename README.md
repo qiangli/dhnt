@@ -1,78 +1,45 @@
-# dhnt
-Bootstrap M3 - the platform for collaborating and creating a new generation of applications based on peer to peer technologies.
+# dhnt/m3
 
-## Setup M3 
+Bootstrap m3 open system - the platform for collaborating and creating a new generation of applications based on peer to peer technologies.
 
-### Install docker and docker-compose
+## Setup m3 os
+
+### Install docker
 
 [Docker Desktop](https://www.docker.com/products/docker-desktop
 ) is an easy-to-install application for your Mac or Windows environment.
 
+[Verify docker installation](https://docs.docker.com/get-started/)
 
-
-### Clone this repo
-
-git clone https://github.com/dhnt/dhnt.git
-
-### Startup
-
-```bash
-docker-compose up -d
-```
-
-<!-- 
-Download [setup](setup/setup) and install M3:
-
-*Mac OS*
-```
-setup
-```
-
-Enter your password when prompted.
-
-*Unix*
+### Start m3 os 
 
 ```
-coming soon ...
+docker run --name dhnt --detach --rm --volume /var/run/docker.sock:/var/run/docker.sock dhnt/dhnt
 ```
 
-*Windows*
-
-```
-coming soon ...
-```
-
-
-You can also build and run from [source](http://github.com/dhnt/m3) -->
-
-## Run Apps
+## Explore and run Apps
 
 [Required] setup M3 as proxy for your browsers. http://localhost:18080/
 
+You should be able to access the following links:
+
 <!-- 
-[Optional] run systray for easy access to applications.
-~/dhnt/go/bin/systray & -->
+```
+username: dhnt
+password: password
+``` -->
 
 _Home_  http://home/
 
-<!-- currently the default app only shows if M3 is healthy; you may configure it to point to any web application you host on your local host, docker, or kubernetes or remote instances if you wish. -->
+_File Browser_ http://fb.home/
 
+_Terminal_ http://term.home/
 
-_Git_ http://git.home/
+_Docker Compose UI_ http://dui.home/
 
-<!-- Login with
-```
-username: master
-password: password
-```
-change the default password after your first login. -->
+Start up additional apps:
 
-_Term_ http://term.home/
+_Portainer_ http://portainer.local.m3/
 
-<!-- A web based terminal. Login with a valid user/password on your local machine. -->
+and [others](https://github.com/dhnt/docker-compose)
 
-_Host your own_
-
-Run your own web apps and make it available to the rest of the world.
-
-See ~/dhnt/etc/traefik/ as examples.
