@@ -17,11 +17,27 @@ Bootstrap m3 open system - the platform for collaborating and creating a new gen
 docker run --name dhnt --detach --rm --volume /var/run/docker.sock:/var/run/docker.sock dhnt/dhnt
 ```
 
+http://localhost:18080/health
+
+Click the above link and you see something similar to the following:
+> {"healthy":true,"timestamp":1552266671438}
+
+Congratulations!
+
+### Stop m3 os
+
+```
+docker stop dhnt
+```
+
 ## Explore and run Apps
 
-[Required] setup M3 as proxy for your browsers. http://localhost:18080/
+[Required] set up M3 as proxy for your browsers. http://localhost:18080/
 
-You should be able to access the following links:
+Another option is to install a pugin such as [Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
+
+
+You should now be able to access the following links:
 
 <!-- 
 ```
@@ -29,17 +45,19 @@ username: dhnt
 password: password
 ``` -->
 
-_Home_  http://home/
+_Home_  https://home/
 
-_File Browser_ http://fb.home/
+_File Browser_ https://fb.home.m3/
 
-_Terminal_ http://term.home/
+_Terminal_ https://term.home.m3/
 
-_Docker Compose UI_ http://dui.home/
+_Docker Compose UI_ https://dui.home.m3/
 
 Start up additional apps:
 
-_Portainer_ http://portainer.local.m3/
+_Portainer_ https://portainer.local.m3/
 
 and [others](https://github.com/dhnt/docker-compose)
 
+
+Enjoy the ride!
