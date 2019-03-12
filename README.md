@@ -1,6 +1,6 @@
 # dhnt/m3
 
-Bootstrap m3 open system - the platform for collaborating and creating a new generation of applications based on peer to peer technologies.
+Bootstrap m3 open system - the platform for collaborating and creating a new generation of applications based on p2p and container technologies.
 
 ## Setup m3 os
 
@@ -30,11 +30,31 @@ Congratulations!
 docker stop dhnt
 ```
 
+### Firewall Issues
+
+If dhnt failed to start most likely due to corporate firewall/proxy, try prefetching the docker images.
+
+* Clean up failed containers.
+
+```
+docker stop dhnt
+docker system prune -f
+```
+* Pull docker images
+
+```
+docker pull dhnt/m3
+docker full asperitus/docker-compose-ui
+```
+
+* Try start m3 os again.
+
+
 ## Explore and run Apps
 
 [Required] set up M3 as proxy for your browsers. http://localhost:18080/
 
-Another option is to install a pugin such as [Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
+Another option is to install a browser plugin such as [Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
 
 
 You should now be able to access the following links:
@@ -58,6 +78,10 @@ Start up additional apps:
 _Portainer_ https://portainer.local.m3/
 
 and [others](https://github.com/dhnt/docker-compose)
+
+## Browse peers
+
+https://_known-peer-id_.m3
 
 
 Enjoy the ride!
