@@ -13,8 +13,8 @@ Bootstrap m3 open system - the platform for collaborating and creating a new gen
 
 ### Start m3 os 
 
-```
-docker run --name dhnt --detach --rm --volume /var/run/docker.sock:/var/run/docker.sock dhnt/dhnt
+```bash
+docker run --name dhnt --detach --rm --env USER=$USER --env HOME=$HOME --volume /var/run/docker.sock:/var/run/docker.sock dhnt/dhnt
 ```
 
 http://localhost:18080/health
@@ -26,7 +26,7 @@ Congratulations!
 
 ### Stop m3 os
 
-```
+```bash
 docker stop dhnt
 ```
 
@@ -44,6 +44,7 @@ docker system prune -f
 
 ```
 docker pull dhnt/m3
+docker full asperitus/ipfs
 docker full asperitus/docker-compose-ui
 ```
 
@@ -83,5 +84,8 @@ and [others](https://github.com/dhnt/docker-compose)
 
 https://_known-peer-id_.m3
 
+You should be able to chat will me if my M3 is running.
+
+https://chat.921rt1c2kvjv18j82zcahw6khaggawyhagr4p63xsxfkbpd16h901j.m3
 
 Enjoy the ride!

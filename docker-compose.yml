@@ -10,11 +10,12 @@ services:
     ports:
       - "1080:1080"
       - "18080:18080"
-      # https://github.com/ipfs-shipyard/ipfs-webui/issues/836
-      - "5001:5001"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - dhnt:/home/dhnt
+    environment:
+      - log_level=info
+      # - log_file=/var/m3.log
     entrypoint:
       - '/dhnt/bin/m3'
       - 'run'
@@ -24,7 +25,20 @@ services:
       - traefik.enable=false
     networks:
       web:
-  
+    depends_on:
+      - ipfs
+
+  ipfs:
+    image: asperitus/ipfs:latest
+    container_name: ipfs
+    environment:
+      - HOST_USER=$USER
+    volumes:
+      - $HOME:/host
+    restart: always
+    labels:
+      - traefik.enable=false
+
   dui:
     image: asperitus/docker-compose-ui:latest
     restart: always
