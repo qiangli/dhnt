@@ -30,6 +30,17 @@ Congratulations!
 docker stop dhnt
 ```
 
+### Upgrade
+
+Manually pull the latest docker images and restart(stop/start).
+
+```bash
+docker pull dhnt/dhnt
+docker pull dhnt/m3
+docker pull asperitus/ipfs
+docker pull asperitus/docker-compose-ui
+```
+
 ### Firewall Issues
 
 If dhnt failed to start most likely due to corporate firewall/proxy, try prefetching the docker images.
@@ -43,9 +54,10 @@ docker system prune -f
 * Pull docker images
 
 ```
+docker pull dhnt/dhnt
 docker pull dhnt/m3
-docker full asperitus/ipfs
-docker full asperitus/docker-compose-ui
+docker pull asperitus/ipfs
+docker pull asperitus/docker-compose-ui
 ```
 
 * Try start m3 os again.
